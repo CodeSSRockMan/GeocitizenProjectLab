@@ -20,6 +20,7 @@ Welcome to the Geocitizen Project Lab. This is a community-driven initiative ded
 * Collaborate as a Community
 
 ## Setup:
+(for more information about the setup, files and dependencies check the Wiki)
 
 1.- Prerequisites (dependencies):
 * Java Development Kit (JDK): Version 11 or higher.
