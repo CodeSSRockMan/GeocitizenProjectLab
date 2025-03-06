@@ -1,36 +1,68 @@
-<<<<<<< HEAD
-# ch-058, geocitizen
+# GeocitizenProjectLab
+---
+## About this project
+Welcome to the Geocitizen Project Lab. This is a community-driven initiative dedicated to deploying Geocitizen, a project originally developed by Peter Lanush. Our primary focus is modernizing the project's files and dependencies to facilitate its deployment. Since the original project is legacy code, it presented numerous challenges. Our work revolves around updating and improving the project to ensure seamless deployment and maintainability. Additionally, we document the deployment process and any issues encountered along the way.
 
-___build and deploy (ubuntu16, git2, maven3, tomcat9)___
+## Staff:
+* Pedro Ramos (developer)
+* Manuel Herrera (developer)
+* Mathias Von Jentschyk (team lead)
 
-1) `git clone https://github.com/nromanen/Ch-058.git; cd Ch-058`
-1) in config file [`~/Ch-058/src/main/resources/application.properties`](https://git.io/vA4Sw)
-	you might want to edit following properties
-	 * [`front.url`](https://git.io/vARyB) - front url
-	 * [`db.url`](https://git.io/vARyu) - db uri (__db must be created manually__)
-	 * [`db.username`](https://git.io/vARyo) & [`db.password`](https://git.io/vARyK) - db credentials
-1) `mvn install && mv target/citizen.war /usr/share/tomcat9/webapps/ && /usr/share/tomcat9/bin/startup.sh`
-1) e.g. <http://localhost:8080/citizen/>
+## Goals:
+* Understand the Project Structure and Functionality
 
-# 
+* Document the Deployment Process and Challenges
 
-if you want to make changes to frontend 
-you have to cd to `~/Ch-058/front-end` dir and run `npm run dev` after successful execution you'll see url.
-to generate the production build you have to
- - replace url with tomcat's url (e.g. `'http://localhost:8080/citizen'`) in [`~/Ch-058/front-end/src/main.js`](git.io/vA49U)
- - run `npm run build`, move all files from `~/Ch-058/front-end/dist` to `~/Ch-058/src/main/webapp`
- - in [`~/Ch-058/src/main/webapp/index.html`](https://git.io/vAR9l) put dots (ha-ha) on lines
-    * after [`<link href=`](https://git.io/vARrw) 
-    * after [`<script type=text/javascript src=`](https://git.io/vARr5)          
-- then repeat 3rd step of `build and deploy`  
+* Update and Configure Project Files
 
-# 
-    
-[swagger](http://localhost:8080/citizen/swagger-ui.html)
+* Ensure Seamless Deployment and Maintainability
 
-[heroku](https://geocitizen.herokuapp.com)  
-  
+* Collaborate as a Community
 
-=======
-# Geocitizen
->>>>>>> a3175f1c0fdab76be1cea3be0ec00b86a68e345b
+## Setup:
+
+1.- Prerequisites (dependencies):
+* Java Development Kit (JDK): Version 11 or higher.
+
+* Apache Maven: Version 3.6.x or higher.
+
+* PostgreSQL: Version 12 or higher.
+
+* Docker (optional): For containerized deployment.
+
+2.- Clone the repository following this:
+```
+git clone https://github.com/CodeSSRockMan/GeocitizenProjectLab.git
+cd GeocitizenProjectLab
+```
+3.- Set up the data base:
+* Install and configure PostgreSQL on your system.
+
+* Create a new database for the project (e.g., geocitizen_db).
+
+* Update the database connection details in the application.properties file:
+```
+spring.datasource.url=jdbc:postgresql://localhost:5432/geocitizen_db
+spring.datasource.username=your_username
+spring.datasource.password=your_password
+```
+4.- Build the project & run the application (with maven):
+```
+mvn clean install
+```
+then for the run:
+```
+mvn spring-boot:run
+```
+5.- Access the application:
+Once the application is running, open your browser and navigate to:
+```
+http://localhost:8080
+```
+
+
+
+
+
+
+
